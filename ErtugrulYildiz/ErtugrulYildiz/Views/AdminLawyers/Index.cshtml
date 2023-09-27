@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ErtugrulYildiz.Models.Model.Lawyers>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Avukatlar</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AvukatAdSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvukatUnvan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvukatFotograf)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvukatAdSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvukatUnvan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvukatFotograf)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.AvukatId }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.AvukatId }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.AvukatId })
+        </td>
+    </tr>
+}
+
+</table>

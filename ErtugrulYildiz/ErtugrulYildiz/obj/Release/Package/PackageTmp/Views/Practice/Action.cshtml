@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ErtugrulYildiz.Models.Model.Apply>
+<div class="container-fluid py-5">
+    @foreach (var item in Model)
+    {
+        <div class="container py-5">
+            <div class="bg-action rounded" style="height: 500px;">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-lg-7 text-center">
+                        <h1 class="text-white mb-4">@item.BasvurAciklama</h1>
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="#">Bize Ulaşın</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

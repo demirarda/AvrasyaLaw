@@ -1,0 +1,43 @@
+﻿@model ErtugrulYildiz.Models.Model.Slider
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Slider</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SliderBaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SliderBaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SliderAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SliderAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SliderFotograf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SliderFotograf)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SliderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

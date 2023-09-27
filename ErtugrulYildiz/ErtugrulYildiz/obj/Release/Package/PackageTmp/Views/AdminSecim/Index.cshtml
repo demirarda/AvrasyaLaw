@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ErtugrulYildiz.Models.Model.Choose>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Bizi Neden Seçmelisiniz</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SecimBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecimAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecimFotograf)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecimBaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecimAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecimFotograf)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.SecimId }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.SecimId }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.SecimId })
+        </td>
+    </tr>
+}
+
+</table>

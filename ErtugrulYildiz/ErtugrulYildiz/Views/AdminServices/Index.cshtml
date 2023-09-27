@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ErtugrulYildiz.Models.Model.Services>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Hiztmetler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HizmetBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HizmetAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HizmetFotograf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalismaBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalismaAciklama)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HizmetBaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HizmetAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HizmetFotograf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalismaBaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalismaAciklama)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.HizmetId }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.HizmetId }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.HizmetId })
+        </td>
+    </tr>
+}
+
+</table>

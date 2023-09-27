@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ErtugrulYildiz.Models.Model.About>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HakkimizdaBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HakkimizdaAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HakkimizdaFotograf)
+        </th>
+        <th>
+            İşlemler
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HakkimizdaBaslik)
+        </td>
+        <td>
+            @Html.Raw(item.HakkimizdaAciklama)
+        </td>
+        <td>
+            <img class="img-responsive" src="@item.HakkimizdaFotograf" width="300" height="200" />
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.HakkimizdaId })           
+            
+        </td>
+    </tr>
+}
+
+</table>

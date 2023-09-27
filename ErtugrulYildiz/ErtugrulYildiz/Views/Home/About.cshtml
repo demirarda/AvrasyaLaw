@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ErtugrulYildiz.Models.Model.About>
+<!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded" src="@item.HakkimizdaFotograf" alt="">
+                </div>
+                <div class="col-lg-7 mt-4 mt-lg-0">
+                    <h2 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block" style="width: 350px; margin-left: -205px;">Deneyimli Kadro</h2>
+                    <h6 class="text-uppercase">HAKKIMIZDA BİLGİ EDİNİN</h6>
+                    <h1 class="mb-4">@item.HakkimizdaBaslik</h1>
+                    <p>@Html.Raw(item.HakkimizdaAciklama.Substring(0, 100)) ...</p>
+                    <a href="/About/Index/" class="btn btn-primary mt-2">Daha Fazla</a>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<!-- About End -->

@@ -1,0 +1,65 @@
+﻿@model ErtugrulYildiz.Models.Model.Services
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Sil</h2>
+
+<h3>Silmek istediğinize emin misiniz ?</h3>
+<div>
+    <h4>Hizmetler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HizmetBaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HizmetBaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HizmetAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HizmetAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HizmetFotograf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HizmetFotograf)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.CalismaBaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalismaBaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CalismaAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalismaAciklama)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>
